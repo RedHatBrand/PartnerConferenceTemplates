@@ -9,7 +9,7 @@ The gulp + metalsmith builder for SKO Templates
 
     npm install --global gulp
     git clone git@github.com:RedHatBrand/PartnerConferenceTemplates.git
-    cd SalesKickOffTemplates
+    cd PartnerConferenceTemplates
     npm install
 
     # Run server
