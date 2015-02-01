@@ -1,0 +1,72 @@
+---
+width: 101.6mm
+height: 152.4mm
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/speaker/lanyard/assets/main.css" />
+    <style type="text/css">
+      {{# background-image }}
+        .background-image main {
+          background-image:
+            url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
+            url('{{{ background-image }}}');
+
+          background-repeat: no-repeat;
+          background-blend-mode: multiply;
+          background-size: 100% auto, cover;
+          background-position: center center, center center;
+
+          color: white;
+        }
+
+        .logotext { fill: white; }
+      {{/ background-image }}
+    </style>
+  </head>
+  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{ direction }} {{artwork-option}} {{colormode}}">
+    {{^ background-image }}
+    <div id="artwork"></div>
+    {{/ background-image }}
+
+    <main>
+      <div id="content">
+        <div class="brand sko">
+          <% include ../../../shared/images/event-logo-lockup.svg %>
+        </div>
+        <article>
+          <h1>{{{ name }}}</h1>
+          <h3>{{{ position }}}</h3>
+          <h2>{{{ company }}}</h2>
+        </article>
+      </div>
+
+      {{^ background-image }}
+      <div class="corner-shapes-bottom-right">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <% include ../../../shared/images/rh-logo-include.svg %>
+        </div>
+      </div>
+      {{/ background-image }}
+    </main>
+
+    {{#artwork-complexity}}
+    <script type="text/javascript">
+      window.redhatArtComplexity = {{ artwork-complexity }};
+    </script>
+    {{/artwork-complexity}}
+
+    {{^ background-image }}
+    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    {{/ background-image }}
+
+    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+  </body>
+</html>
+

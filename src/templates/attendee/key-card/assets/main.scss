@@ -1,0 +1,38 @@
+:root, html {
+  font-size: 6pt;
+}
+
+#content {
+  left: 2em;
+  right: 2em;
+  top: 2.5em;
+  transform: none;
+  width: initial;
+}
+
+.brand.sko {
+  width: 66.667%;
+}
+
+.corner-shapes-bottom-right {
+  width: 100%;
+}
+
+.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+  right: 2em;
+  bottom: 2em;
+}
+
+.corner-shapes-bottom-right .corner-shape-pattern svg {
+  stroke-width: 0.2pt;
+}
+
+.background-image #content {
+  .brand {
+    text-align: right;
+
+    svg {
+      display: inline-block;
+    }
+  }
+}

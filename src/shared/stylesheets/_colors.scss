@@ -1,0 +1,135 @@
+body, .artwork-container.red {
+  background-color: lighten($color-rh-slate, 20%);
+}
+
+#artwork:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at center, $color-rh-white 0%, $color-rh-white 50%, lighten($color-rh-slate, 10%) 100%);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.artwork-inner {
+  z-index: 2;
+}
+
+main {
+  z-index: 3;
+}
+
+main:before, .artwork-overlay:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at center, $color-rh-white 0%, rgba($color-rh-white, 0) 100%);
+  opacity: 0.75;
+}
+
+.artwork-pattern svg { stroke: lighten($color-rh-slate, 25%); }
+
+#artwork .artwork-shape {
+  background-color: lighten($color-rh-slate, 10%);
+}
+
+.corner-shape-pattern svg { stroke: lighten($color-rh-slate, 40%); }
+.corner-shape-solid-triangle { background-color: lighten($color-rh-slate, 40%); }
+
+.background-image, .red {
+  color: #fff;
+
+  .logotext, .logotype, h1, h2, h3, text, tspan {
+    color: #fff;
+    fill: #fff !important;
+  }
+
+  #content {
+    color: #fff;
+
+    .sko-logo .logomark path:first-child {
+      fill: #08A8E5 !important;
+    }
+    .sko-logo .logomark path {
+      fill: #0782C2 !important;
+    }
+
+    .sko-logo text,
+    .sko-logo tspan,
+    .logotext, .logotype,
+    h1, h2, h3, text, tspan {
+      color: #fff;
+      fill: #fff !important;
+    }
+  }
+}
+
+.sko-logo {
+  .logotext, .location {
+    fill: darken($color-rh-slate, 10%) !important;
+  }
+}
+
+// RED
+
+body.red, .artwork-container.red {
+  background-color: darken($color-rh-red, 5%);
+}
+
+.red main:before, .artwork-container.red:before {
+  background-image: radial-gradient(circle at center, $color-rh-red, rgba($color-rh-red, 0) 100%);
+}
+
+.red .corner-shape-pattern svg { stroke: $color-rh-red; }
+.red .corner-shape-solid-triangle { background-color: $color-rh-red; }
+
+.red #artwork:before {
+  background-image: radial-gradient(circle at center, $color-rh-red 0%, $color-rh-red 50%, rgba($color-rh-red, 0) 100%);
+}
+.red #artwork .artwork-shape { background-color: darken($color-rh-red, 15%); }
+.red #artwork .artwork-pattern svg { stroke: $color-rh-red; }
+
+// SILVER
+
+body.silver, .artwork-container.silver  {
+  background-color: darken($color-rh-white, 5%);
+}
+
+.silver main:before, .artwork-container.silver:before {
+  background-image: radial-gradient(circle at center, $color-rh-white, rgba($color-rh-white, 0) 100%);
+}
+
+.silver .corner-shape-pattern svg { stroke: darken($color-rh-white, 2%); }
+.silver .corner-shape-solid-triangle { background-color: darken($color-rh-white, 2%); }
+
+.silver #artwork:before {
+  background-image: radial-gradient(circle at center, $color-rh-white, $color-rh-white 50%, rgba($color-rh-white, 0) 100%);
+}
+.silver #artwork .artwork-shape { background-color: darken($color-rh-white, 15%); }
+.silver #artwork .artwork-pattern svg { stroke: $color-rh-white; }
+
+// Background image
+
+body.background-image, .background-color main {
+  background-color: white;
+}
+
+.background-image main:before, .background-image #artwork:before {
+  display: none;
+}
+
+.background-image #content {
+  .brand {
+    text-align: right;
+
+    svg {
+      display: inline-block;
+    }
+  }
+}

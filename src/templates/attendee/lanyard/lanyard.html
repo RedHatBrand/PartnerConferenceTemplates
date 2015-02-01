@@ -1,0 +1,87 @@
+---
+width: 101.6mm
+height: 152.4mm
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/attendee/lanyard/assets/main.css" />
+    <style type="text/css">
+      {{# background-image }}
+        .background-image main {
+          background-image:
+            url('//redhatbrand.github.io/RedHatTemplates/global-assets/images/shapes/red/grid-00-00.svg'),
+            url('{{{ background-image }}}');
+
+          background-repeat: no-repeat;
+          background-blend-mode: multiply, multiply;
+          background-size: cover;
+          background-position: 0 50%, center center;
+
+          color: white;
+        }
+
+        .logotext { fill: white; }
+      {{/ background-image }}
+    </style>
+  </head>
+  <body
+    style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}"
+    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
+
+    {{^ background-image }}
+    <div id="artwork"></div>
+    {{/ background-image }}
+
+    <main>
+      <div id="content">
+        <div class="brand sko"><% include ../../../shared/images/event-logo-lockup.svg %></div>
+        <article>
+          <p class="introduction">Hi, my name is
+          <h1>
+            {{ firstname }}
+          </h1>
+          <h2>{{ lastname }}</h2>
+
+          <p>I'm a <strong>{{ position }}</strong> with <strong>{{ company }}</strong></p>
+        </article>
+
+        <div id="map"></div>
+
+        <div id="location">
+          <p>
+          <small>You can find me at <strong>{{ location }}, {{ location-country }}</strong></small>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    {{#artwork-complexity}}
+    <script type="text/javascript">
+      window.redhatArtComplexity = {{ artwork-complexity }};
+    </script>
+    {{/artwork-complexity}}
+
+    {{^ background-image }}
+    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    {{/ background-image }}
+
+    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/leaflet.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/d3.v3.min.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/topojson.v1.min.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/d3-topojson.js'></script>
+
+    <script>
+      var mapSettings = {
+        zoom: 10,
+        address: '{{ location }}, {{ location-country }}'
+      };
+    </script>
+    <script src="<%= baseUrl %>/templates/attendee/lanyard/assets/javascripts/main.js"></script>
+  </body>
+</html>
+

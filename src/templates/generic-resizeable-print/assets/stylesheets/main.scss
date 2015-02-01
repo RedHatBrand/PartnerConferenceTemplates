@@ -1,0 +1,16 @@
+:root, html {
+  font-size: 8pt;
+}
+
+@media (min-height: 200mm) and (min-width: 200mm) {
+  :root, html {
+    font-size: 10pt;
+  }
+}
+
+@media (min-height: 250mm) and (min-width: 250mm) {
+  :root, html {
+    font-size: 12pt;
+  }
+}
+
