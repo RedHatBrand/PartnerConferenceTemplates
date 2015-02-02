@@ -40,7 +40,7 @@ main {
 
 .headline {
   border-top-width: 0;
-  padding-top: 0.5em;
+//  padding-top: 0.5em;
   position: relative;
   margin-left: -0.05em;
   padding-right: 1.5em;
@@ -52,7 +52,7 @@ main {
     left: 0.05em;
     right: 0;
     top: 0;
-    border-top: 0.2em solid;
+//    border-top: 0.2em solid;
   }
 }
 
@@ -80,6 +80,22 @@ svg {
 .container_one-logo {
   width: 50%;}
 
+.details {
+    margin: 10px;
+    padding: 20px;
+    left: 10%;
+    top: 30%;
+    position: absolute;
+    text-align: left;
+    width: 50%;   
+//    background: #eee;
+    
+    h1 { 
+    font-size: 200;
+    }
+}
+
+
 
 .bottomRight {
     width: 15%;
@@ -89,6 +105,8 @@ svg {
     bottom: 0;
 
 }
+
+
 
 .container_two-logos {
   width: 75%;
@@ -119,7 +137,7 @@ svg {
 
   .event-logo-container,
   .headline-container {
-    box-sizing: border-box;
+    box-sizing: border-box; 
     padding: 5%;
   }
 
@@ -129,7 +147,7 @@ svg {
   }
 
   .fy16 {
-    font-weight: 700;
+    font-weight: 800;
     line-height: 0.8em;
     margin-left: -0.08em;
     margin-bottom: 0;
@@ -269,6 +287,7 @@ svg {
 
   .container_headline-and-event-logo .event-logo-container {
     float: right;
+      
   }
 
   .container_fy16-and-headline-and-event-logo {
@@ -276,7 +295,7 @@ svg {
     .headline-container {
       margin: 0;
       box-sizing: border-box;
-      padding: 4%;
+      padding: 10%;
       float: left;
     }
 
@@ -296,7 +315,7 @@ svg {
 
   #content.container_headline-and-event-logo {
     width: 50%;
-    left: 2.5%;
+    left: 5.5%;
   }
 
   #content.container_event-logo {
@@ -360,12 +379,13 @@ svg {
       .headline { width: 44%; }
 
       .fy16 {
-        padding-right: 5%;
+        padding-right: 15%;
       }
     }
 
     .event-logo-container {
       width: 30%;
+        margin-top: 10px;
       padding-left: 0;
     }
   }
@@ -386,6 +406,8 @@ svg {
       transform: translateY(-40%);
     }
   }
+#hl-and-el.event-logo-container {
+    margin-top: 100px;}
 
     
 }

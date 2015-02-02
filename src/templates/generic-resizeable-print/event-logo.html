@@ -12,9 +12,11 @@ height: calc(100vh - 2em)
     <style type="text/css">
       {{# background-image }}
         .background-image main {
+/*
           background-image:
             url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
+*/
 
           background-repeat: no-repeat;
           background-blend-mode: multiply;
@@ -30,7 +32,9 @@ height: calc(100vh - 2em)
   </head>
   <body
     style="width: {{ width }}%; height: {{ height }}{{unit}}"
-    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
+    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}"
+    
+    >
 
     {{^ background-image }}
     <div id="artwork"></div>

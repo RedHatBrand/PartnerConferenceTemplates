@@ -29,7 +29,7 @@ height: calc(100vh - 2em)
     </style>
   </head>
 
-  <body id="hl-and-el" 
+  <body
     style="width: {{ width }}%; height: {{ height }}{{unit}}"
     class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
 
@@ -38,12 +38,13 @@ height: calc(100vh - 2em)
     {{/ background-image }}
 
     <main>
-      <div id="content" class="container_headline-and-event-logo">
+      <div id="content" class="container_fy16-and-headline-and-event-logo">
+        <div class="headline-container">
+          <h2 class="fy16 js-fy16">North America</h2>
+          <h1 class="headline js-headline">{{{ headline }}}</h1>
+        </div>
         <div class="event-logo-container">
           <% include ../../shared/images/event-logo-lockup.svg %>
-        </div>
-        <div class="headline-container">
-          <h1 class="headline js-headline">{{{ headline }}}</h1>
         </div>
       </div>
 
