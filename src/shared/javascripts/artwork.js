@@ -173,7 +173,7 @@
             return alignment.left(triangle, i, _offset, _flipped);
     }
     
-    function addTriangle (i, _alignment, _offset, _flipped) {
+    function addTriangleWithOptions (i, _alignment, _offset, _flipped) {
         var div = document.createElement('div');
         div.classList.add('artwork-triangle');
         
@@ -184,6 +184,10 @@
         div.style.backgroundSize = "100%";
         div.style.overflow = "hidden";
         canvas.appendChild(div);
+    }
+    
+    function addTriangle (i, _alignment) {
+        addTriangleWithOptions (i, _alignment, 0, false);
     }
     
     function drawBackground () {
