@@ -54,8 +54,9 @@ body, .artwork-container {
 //    fill: #fff !important;
 //  }
 //
-//  #content {
-//    color: #fff;
+  #content {
+    color: #fff;
+  }
 //
 //    .sko-logo .logomark path:first-child {
 //      fill: #08A8E5 !important;
@@ -64,14 +65,25 @@ body, .artwork-container {
 //      fill: #0782C2 !important;
 //    }
 //
-//    .sko-logo text,
-//    .sko-logo tspan,
-//    .logotext, .logotype,
-//    h1, h2, h3, text, tspan {
-//      color: #fff;
-//      fill: #fff !important;
-//    }
-//  }
+    .sko-logo text,
+    .sko-logo tspan,
+    .logotext, .logotype,
+    h1, h2, h3, text, tspan {
+      color: #fff;
+      fill: #fff !important;
+    }
+
+.logotypeReverse {
+    fill: #000 !important;
+    color: #000 !important;
+}
+    
+.bottomRight {
+    fill: #000 !important;
+    color: #000 !important;
+}
+
+//}
 //}
 //
 //.sko-logo {
