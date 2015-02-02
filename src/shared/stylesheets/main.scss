@@ -44,7 +44,7 @@ main {
   position: relative;
   margin-left: -0.05em;
   padding-right: 1.5em;
-  line-height: 1.125em;
+  line-height: 1em;
 
   &:before {
     content: '';
@@ -89,10 +89,6 @@ svg {
     text-align: left;
     width: 50%;   
 //    background: #eee;
-    
-    h1 { 
-    font-size: 200;
-    }
 }
 
 
@@ -116,6 +112,19 @@ svg {
     padding: 5%;
     float: left;
   }
+}
+
+.location {
+    font-weight: 800;
+    line-height: 1em;
+}
+
+.date {
+    line-height: 1em;}
+
+.subtitle {
+line-height: 1em;
+    text-transform: capitalize;
 }
 
 .container_headline-and-event-logo {
