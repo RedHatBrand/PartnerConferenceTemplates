@@ -19,6 +19,7 @@ body {
 // Base Styles
 
 main {
+    background-color: #4fc9ff;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -34,7 +35,7 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  max-width: 80%;
+  max-width: 90%;
   z-index: 20;
 }
 
@@ -92,7 +93,14 @@ svg {
 }
 
 
+.leftAligned {
+    width: 85%;
+    padding: 0%;
+    position: absolute;
+    left: 5%;
+    top: 40%;
 
+}
 .bottomRight {
     width: 15%;
     padding: 3.5% 5%;
@@ -111,6 +119,9 @@ svg {
 
 }
 
+.location {
+    width: 30%;}
+
 
 .container_two-logos {
   width: 75%;
@@ -123,7 +134,7 @@ svg {
 }
 
 .location {
-    font-weight: 800;
+//    font-weight: 800;
     line-height: 1em;
 }
 
@@ -242,6 +253,13 @@ svg {
   .corner-shapes-bottom-right {
     width: 60%;
   }
+    
+    .leftAligned {
+        top: 30%;
+        left: 15%;
+        width: 50%;
+       
+    }
     .bottomRight {
         padding: 15%;
         width: 25%;}
@@ -270,6 +288,11 @@ svg {
 
         padding: 15%;
         width: 30%;}
+    
+    .leftAligned {
+
+        padding: 10%;
+        width: 80%;}
 
   
 }
@@ -363,12 +386,29 @@ svg {
   #content.container_fy16-and-headline-and-event-logo {
     width: 60%;
   }
-    
+    .locationWrap {
+        width: 45%;
+    }
+    .leftAligned {
+        max-width: 50%;
+    }
     .bottomRight {
         padding: 0;
         margin: auto 0;
         width: 15%;
         right: 5%;
+        bottom: auto;
+        top: 45%;
+        transform: translateY(-40%);
+    }
+    
+    .bottomLeft {
+//        right: 0;
+        left: auto;
+        padding: 0;
+        margin: auto 0;
+        width: 15%;
+        right: 25%;
         bottom: auto;
         top: 45%;
         transform: translateY(-40%);
