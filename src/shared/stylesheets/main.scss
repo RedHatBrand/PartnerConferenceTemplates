@@ -78,7 +78,16 @@ svg {
 }
 
 .container_one-logo {
-  width: 50%;
+  width: 50%;}
+
+
+.bottomRight {
+    width: 15%;
+    padding: 3.5% 5%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
 }
 
 .container_two-logos {
@@ -190,6 +199,9 @@ svg {
   .corner-shapes-bottom-right {
     width: 60%;
   }
+    .bottomRight {
+        padding: 8% 9%;
+        width: 25%;}
 }
 
 @media all and (max-aspect-ratio: 1/2) {
@@ -205,19 +217,28 @@ svg {
   .corner-shapes-bottom-right {
     width: 80%;
   }
+    .bottomRight {
+
+        padding: 8%;
+        width: 35%;}
+  
 }
 
 // Landscape
 
 // ISO
 @media all and (min-aspect-ratio: 297/210) {
-  #content.container_event-logo,
+
   #content.container_fy16-and-headline-and-event-logo,
   #content.container_headline-and-event-logo {
     left: 10%;
     transform: translateY(-50%);
   }
 
+    #content.container_event-logo {
+        left: 50%;
+    }
+    
   .container_headline-and-event-logo,
   .container_fy16-and-headline-and-event-logo {
     width: 33.333%;
@@ -234,10 +255,14 @@ svg {
 }
 
 @media all and (min-aspect-ratio: 2/1) {
+    
+    
   #content, #content[class*=container_] {
     width: 66.667%;
   }
 
+    #content.container_event-logo{
+        width: 40%;}
   .container_headline-and-event-logo .one-half {
     @include half;
   }
@@ -275,7 +300,7 @@ svg {
   }
 
   #content.container_event-logo {
-    left: 2.5%;
+    left: 30%;
     padding: 2.5%;
   }
 
@@ -287,6 +312,17 @@ svg {
   #content.container_fy16-and-headline-and-event-logo {
     width: 60%;
   }
+    
+    .bottomRight {
+        padding: 0;
+        margin: auto 0;
+        width: 15%;
+        right: 5%;
+        bottom: auto;
+        top: 45%;
+        transform: translateY(-40%);
+    }
+    
 }
 
 @media all and (min-aspect-ratio: 4/1) {
@@ -304,7 +340,7 @@ svg {
   }
 
   #content.container_event-logo {
-    left: 0;
+    left: 20%;
     padding: 2.5%;
   }
 
@@ -350,4 +386,6 @@ svg {
       transform: translateY(-40%);
     }
   }
+
+    
 }
