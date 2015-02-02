@@ -120,53 +120,79 @@
     });
     
     var alignment = {
-        "top": function(triangle, i) {
+        "top": function(triangle, i, offset, flipped) {
             triangle.style.top = "0%";
-            triangle.style.right = (i*10) + "%";
+            triangle.style.right = flipped ? (i*-15) + offset - 100 + "vw" : (i*15) + offset + "vw";
+            triangle.style.transform = "rotateX(180deg)";
+            triangle.style.webkitTransform = "rotateX(180deg)";
+            triangle.style.MozTransform = "rotateX(180deg)";
+            triangle.style.msTransform = "rotateX(180deg)";
+            triangle.style.OTransform = "rotateX(180deg)";
+            triangle.style.width = (100-offset) + "vw";
+            triangle.style.height = (100-offset)*2 + "vw";
         },
-        "left": function(triangle, i) {
+        "left": function(triangle, i, offset, flipped) {
             triangle.style.left = "0%";
-            triangle.style.top = (i*10) + "%";
+            triangle.style.top = flipped ? (i*-15) + offset - 100 + "vh" : (i*15) + offset + "vh";
             triangle.style.transform = "rotateY(0deg)";
+            triangle.style.webkitTransform = "rotateY(0deg)";
+            triangle.style.MozTransform = "rotateY(0deg)";
+            triangle.style.msTransform = "rotateY(0deg)";
+            triangle.style.OTransform = "rotateY(0deg)";
+            triangle.style.width = (100-offset) + "vh";
+            triangle.style.height = (100-offset)*2 + "vh";
         },
-        "bottom": function(triangle, i) {
+        "bottom": function(triangle, i, offset, flipped) {
             triangle.style.bottom = "0%";
-            triangle.style.right = (i*10) + "%";
+            triangle.style.right = flipped ? (i*-15) + offset - 100 + "vw" : (i*15) + offset + "vw";
+            triangle.style.transform = "rotateX(0deg)";
+            triangle.style.webkitTransform = "rotateX(0deg)";
+            triangle.style.MozTransform = "rotateX(0deg)";
+            triangle.style.msTransform = "rotateX(0deg)";
+            triangle.style.OTransform = "rotateX(0deg)";
+            triangle.style.width = (100-offset) + "vw";
+            triangle.style.height = (100-offset)*2 + "vw";
         },
-        "right": function(triangle, i) {
+        "right": function(triangle, i, offset, flipped) {
             triangle.style.right = "0%";
-            triangle.style.top = (i*10) + "%";
+            triangle.style.top = flipped ? (i*-15) + offset - 100 + "vh" : (i*15) + offset + "vh";
             triangle.style.transform = "rotateY(180deg)";
+            triangle.style.webkitTransform = "rotateY(180deg)";
+            triangle.style.MozTransform = "rotateY(180deg)";
+            triangle.style.msTransform = "rotateY(180deg)";
+            triangle.style.OTransform = "rotateY(180deg)";
+            triangle.style.width = (100-offset) + "vh";
+            triangle.style.height = (100-offset)*2 + "vh";
         }
     }
     
-    function setTriangleAlignment (_alignment, triangle, i) {
+    function setTriangleAlignment (_alignment, triangle, i, _offset, _flipped) {
         if (alignment[_alignment])
-            return alignment[_alignment](triangle, i);
+            return alignment[_alignment](triangle, i, _offset, _flipped);
         else
-            return alignment.left(triangle, i);
+            return alignment.left(triangle, i, _offset, _flipped);
     }
     
-    function addTriangle (i, _alignment) {
+    function addTriangle (i, _alignment, _offset, _flipped) {
         var div = document.createElement('div');
         div.classList.add('artwork-triangle');
+        
         div.style.backgroundImage = "url(\"data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 200'><polygon fill-opacity='0.2' fill='rgb(0,185,228)' points='0,0 100,100 0,200' /></svg>\")";
-        setTriangleAlignment (_alignment, div, i);
+        
+        setTriangleAlignment (_alignment, div, i, _offset, _flipped);
         div.style.position = "absolute";
-        div.style.width = "100vh";
-        div.style.height = "100vh";
-        div.style.backgroundSize = "200%";
+        div.style.backgroundSize = "100%";
         div.style.overflow = "hidden";
         canvas.appendChild(div);
     }
     
     function drawBackground () {
         for (var i = 0; i < 5; i++) {
-            addTriangle (i,"left");
+            addTriangle (i,"left",-100,true);
         }
         
         for (var i = 0; i < 5; i++) {
-            addTriangle (i,"right");
+            addTriangle (i,"right",15,true);
         }
     }
     
