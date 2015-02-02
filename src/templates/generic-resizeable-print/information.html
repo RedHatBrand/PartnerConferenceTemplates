@@ -44,15 +44,18 @@ height: calc(100vh - 2em)
           <h1 class="date js-date">16th - 17th of July</h1>
             <h1 class="subtitle js-subtitle"> Exhibition centre 1  </h1>
         </div>
-        <div class="event-logo-container">
-          <% include ../../shared/images/event-logo-lockup.svg %>
-        </div>
+       
       </div>
 
       {{^ background-image }}
-          <div class="bottomRight">
-              <% include ../../shared/images/rh-logo.svg %>
-                  </div>
+       
+        <div class="bottomLeft">
+            <% include ../../shared/images/event-logo-lockup.svg %>
+                </div>
+                
+        <div class="bottomRight">
+          <% include ../../shared/images/rh-logo.svg %>
+              </div>
       {{/ background-image }}
     </main>
 
