@@ -3,21 +3,28 @@
 }
 
 .brand.sko {
-  width: 66.667%;
+  width: 50%;
 }
 
 #content {
-  left: 4.5em;
-  top: 4.5em;
+  left: 3.5em;
+  top: 3.5em;
   right: 25%;
   transform: none;
+  width: initial;
 }
 
-.corner-shapes-bottom-right {
-  width: 50%; 
+.cardInfo {
+    padding-top: 1.5em; 
+}
+span {
+    font-weight: 300 !important;
+}
+.name {
+//    padding-bottom: 0.5em;
 }
 
-.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
-  right: 2em;
-  bottom: 2em;
+.lastName {
+    line-height: 1em;
+    font-weight: 300 !important;
 }

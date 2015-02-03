@@ -1,5 +1,5 @@
 ---
-width: 140mm;
+width: 148mm;
 height: 105mm;
 ---
 
@@ -8,7 +8,7 @@ height: 105mm;
   <head>
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
-    <link rel="stylesheet" href="<%=baseUrl%>/templates/speaker/table-setting/assets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/attendee/table-setting/assets/main.css" />
     <style type="text/css">
       {{# background-image }}
         .background-image main {
@@ -28,32 +28,29 @@ height: 105mm;
       {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{ direction }} {{artwork-option}} {{colormode}}">
-    {{^ background-image }}
+  <body
+    style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}"
+    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
+    {{^background-image }}
     <div id="artwork"></div>
-    {{/ background-image }}
-
+    {{/background-image}}
+    
     <main>
       <div id="content">
         <div class="brand sko">
           <% include ../../../shared/images/event-logo-lockup.svg %>
         </div>
-
-        <article>
-          <h1>{{{ name }}}</h1>
+        <article class="cardInfo">
+            <h1 class="name">{{{ first-name }}} <br><span class="lastName"> {{{ last-name }}}</span></h1>
           <h3>{{{ position }}}</h3>
           <h2>{{{ company }}}</h2>
         </article>
       </div>
 
       {{^ background-image }}
-      <div class="corner-shapes-bottom-right">
-        <div class="corner-shape-solid-triangle"></div>
-        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-        <div class="corner-shape-bottom-right-logo rh-logo">
-          <% include ../../../shared/images/rh-logo-include.svg %>
-        </div>
-      </div>
+          <div class="bottomRight">
+              <% include ../../../shared/images/rh-logo.svg %>
+                  </div>
       {{/ background-image }}
     </main>
 
