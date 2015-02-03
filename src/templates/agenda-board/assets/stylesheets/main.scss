@@ -16,7 +16,7 @@ body { color: $color-rh-slate; }
   bottom: 0;
   height: 100%;
   transform: none;
-  background-color: rgba(lighten($color-rh-slate, 50%), 0.6);
+//  background-color: rgba(lighten($color-rh-slate, 50%), 0.6);
 }
 
 .header-content {
@@ -32,7 +32,7 @@ body { color: $color-rh-slate; }
   color: $color-rh-white;
 
   #content {
-    background-color: transparent;
+//    background-color: transparent;
 
     .session-inner, .session-inner h3 { color: $color-rh-black; }
   }

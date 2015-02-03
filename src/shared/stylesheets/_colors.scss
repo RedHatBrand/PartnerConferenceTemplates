@@ -4,15 +4,22 @@ body, .artwork-container {
 
 #content {
     color: #fff;
+//    background-color: #000;
 }
+
+.agenda-session-header-text h3 {
+    color: #b1b1b1 !important;
+}
+
 
 .sko-logo text,
 .sko-logo tspan,
 .logotext, .logotype,
 h1, h2, h3, text, tspan {
-    color: #fff;
+//    color: #fff;
     fill: #fff !important;
 }
+
 
 .logotypeReverse {
     fill: #000 !important;

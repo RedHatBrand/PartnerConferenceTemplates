@@ -30,7 +30,7 @@
     },
     {
       "day-name": "Monday",
-      "date": "March 16, 2015",
+      "date": "Month, Day, Year.",
       "sessions": [
       {
         "type": "break",
