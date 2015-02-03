@@ -5,7 +5,11 @@
     canvas.classList.add("artwork-inner");
     canvasWrapper.appendChild(canvas);
     
-    var color         = global.artworkColor;
+    var artColor            = global.artworkColor;
+    var artStyle          = global.artworkStyle;
+    var artSize             = global.artworkSize;
+    var artOrientation      = global.artworkOrientation;
+    var artFlipped          = global.artworkFlipped;
     
     function isPortrait (element) {
         return element.offsetWidth < element.offsetHeight;
@@ -49,13 +53,69 @@
             return color.blue();
     }
     
+    var orientation = {
+        "vertical": function(n) {
+            if (n > 0)
+                return "right";
+            else
+                return "left";
+        },
+        "horizontal": function(n) {
+            if (n > 0)
+                return "bottom";
+            else
+                return "top";
+        }
+    }
+    
+    function getAlignment (n, _orientation) {
+        if (orientation[_orientation])
+            return orientation[_orientation](n);
+        else
+            return orientation.vertical();
+    }
+    
+    var style = {
+        "5:1": function(n) {
+            if (n > 0)
+                return 20;
+            else
+                return -100;
+        },
+        "1:5": function(n) {
+            if (n > 0)
+                return -100;
+            else
+                return 20;
+        },
+        "1:1": function(n) {
+            if (n > 0)
+                return -80;
+            else
+                return -80;
+        },
+        "0:0": function(n) {
+            if (n > 0)
+                return 0;
+            else
+                return 0;
+        }
+    }
+    
+    function getOffset (n, _style) {
+        if (style[_style])
+            return style[_style](n);
+        else
+            return style.vertical();
+    }
+    
     var alignment = {
         "top": function(triangle, i, size, offset, flipped) {
             
-            var transformation = flipped ? "skewX(-45deg)" : "skewX(45deg)";
+            var transformation = flipped ? "skewY(-45deg)" : "skewY(45deg)";
             
             triangle.style.top = "0%";
-            triangle.style.right = flipped ? -(i*(size*10)) + "vw": (i*(size*10)) + offset + "vw";
+            triangle.style.right = flipped ? (i*(size*10)) + "vw": -(i*(size*10)) + offset + "vw";
             triangle.style.transformOrigin = flipped ? "0% 0%" : "100% 100%";
             triangle.style.transform = transformation;
             triangle.style.webkitTransform = transformation;
@@ -82,10 +142,10 @@
         },
         "bottom": function(triangle, i, size, offset, flipped) {
             
-            var transformation = flipped ? "skewX(45deg)" : "skewX(-45deg)";
+            var transformation = flipped ? "skewY(45deg)" : "skewY(-45deg)";
             
             triangle.style.bottom = "0%";
-            triangle.style.right = flipped ? -(i*(size*10)) + "vw" : (i*(size*10)) + offset + "vw";
+            triangle.style.right = flipped ? (i*(size*10)) + "vw" : -(i*(size*10)) + offset + "vw";
             triangle.style.transformOrigin = flipped ? "0% 0%" : "100% 100%";
             triangle.style.transform = transformation;
             triangle.style.webkitTransform = transformation;
@@ -123,7 +183,7 @@
         var div = document.createElement("div");
         div.classList.add("artwork-triangle");
         
-        div.style.backgroundColor = getColor(color);
+        div.style.backgroundColor = getColor(artColor);
         div.style.position = "absolute";
         
         setTriangleAlignment (_alignment, div, i, _size, _offset, _flipped);
@@ -137,11 +197,11 @@
     
     function drawArtwork () {
         for (var i = 0; i < 5; i++) {
-            addTriangleWithOptions (i,2,"left",-100,true);
+            addTriangleWithOptions (i,artSize,getAlignment(0,artOrientation),getOffset(0,artStyle),artFlipped);
         }
         
         for (var i = 0; i < 5; i++) {
-            addTriangleWithOptions (i,2,"right",20,true);
+            addTriangleWithOptions (i,artSize,getAlignment(1,artOrientation),getOffset(1,artStyle),artFlipped);
         }
     }
     

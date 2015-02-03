@@ -7,8 +7,10 @@
     "unit": "vh",
     "headline": "Stronger, Together",
     "_background-image": "//d3s84xo5cmutkt.cloudfront.net/assets/attachments/000/003/179/original/gray_clouds.jpg",
-    "artwork-complexity": "10",
-    "artwork-option": "fractals",
-    "colormode": "red"
+    "artwork-style": "5:1",
+    "artwork-size": 2,
+    "artwork-orientation": "vertical",
+    "artwork-flipped": "true",
+    "colormode": "blue"
   }
 }
