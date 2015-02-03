@@ -57,6 +57,14 @@ height: 297mm;
     {{^ background-image }}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
+    
+    <script type="text/javascript">
+      window.artworkColor = "{{colormode}}";
+      window.artworkStyle = "{{artwork-style}}";
+      window.artworkSize = {{artwork-size}};
+      window.artworkOrientation = "{{artwork-orientation}}";
+      window.artworkFlipped = {{artwork-flipped}};
+    </script>
 
     <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
     <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fittext.js"></script>
