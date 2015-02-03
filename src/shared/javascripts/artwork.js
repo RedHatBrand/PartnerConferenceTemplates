@@ -98,8 +98,8 @@
     canvas.classList.add('artwork-inner');
     canvasWrapper.appendChild(canvas);
     
-    var numberOfTriangles = 5;
     var flipped = false;
+    var colour = "rgba(0,185,228,0.2)";
     
     function isPortrait (element) {
         return element.offsetWidth < element.offsetHeight;
@@ -192,7 +192,7 @@
         var div = document.createElement('div');
         div.classList.add('artwork-triangle');
         
-        div.style.backgroundColor = "rgba(0,185,228,0.2)";
+        div.style.backgroundColor = colour;
         div.style.position = "absolute";
         
         setTriangleAlignment (_alignment, div, i, _size, _offset, _flipped);
@@ -205,12 +205,12 @@
     }
     
     function drawBackground () {
-        for (var i = 0; i < numberOfTriangles; i++) {
-            addTriangleWithOptions (i,1,"left",-100,false);
+        for (var i = 0; i < 5; i++) {
+            addTriangleWithOptions (i,1,"left",-100,true);
         }
         
-        for (var i = 0; i < numberOfTriangles; i++) {
-            addTriangleWithOptions (i,1,"right",20,false);
+        for (var i = 0; i < 5; i++) {
+            addTriangleWithOptions (i,1,"right",20,true);
         }
     }
     
