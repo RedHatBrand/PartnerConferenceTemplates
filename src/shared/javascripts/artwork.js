@@ -206,11 +206,11 @@
     
     function drawBackground () {
         for (var i = 0; i < 5; i++) {
-            addTriangleWithOptions (i,1,"left",-100,true);
+            addTriangleWithOptions (i,2,"left",-100,true);
         }
         
         for (var i = 0; i < 5; i++) {
-            addTriangleWithOptions (i,1,"right",20,true);
+            addTriangleWithOptions (i,2,"right",20,true);
         }
     }
     
