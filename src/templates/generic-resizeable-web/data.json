@@ -6,9 +6,11 @@
     "height": "500",
     "headline": "Collaborate. Accelerate. Win.",
     "background-image": "",
-    "artwork-complexity": 15,
-    "artwork-option": "fractals",
-    "colormode": "platinum",
-    "brand-elements": "large-event-logo"
+    "brand-elements": "large-event-logo",
+    "artwork-style": "5:1",
+    "artwork-size": 2,
+    "artwork-orientation": "vertical",
+    "artwork-flipped": "true",
+    "colormode": "blue"
   }
 }

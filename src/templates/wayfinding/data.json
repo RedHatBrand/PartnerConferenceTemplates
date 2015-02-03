@@ -8,8 +8,10 @@
     "message": "This way to Asia Pacific's best event yet.",
     "direction": "right",
     "_background-image": "//d3s84xo5cmutkt.cloudfront.net/assets/attachments/000/003/179/original/gray_clouds.jpg",
-    "artwork-complexity": 20,
-    "artwork-option": "fractals",
-    "colormode": "platinum"
+    "artwork-style": "5:1",
+    "artwork-size": 2,
+    "artwork-orientation": "vertical",
+    "artwork-flipped": "true",
+    "colormode": "blue"
   }
 }

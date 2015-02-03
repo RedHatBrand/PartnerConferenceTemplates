@@ -51,11 +51,15 @@ height: 2000mm
       {{/ background-image }}
     </main>
 
-    {{#artwork-complexity}}
+    
     <script type="text/javascript">
-      window.redhatArtComplexity = {{ artwork-complexity }};
+      window.artworkColor = "{{colormode}}";
+      window.artworkStyle = "{{artwork-style}}";
+      window.artworkSize = {{artwork-size}};
+      window.artworkOrientation = "{{artwork-orientation}}";
+      window.artworkFlipped = {{artwork-flipped}};
     </script>
-    {{/artwork-complexity}}
+    
 
     {{^ background-image }}
     <script type="text/javascript" src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
