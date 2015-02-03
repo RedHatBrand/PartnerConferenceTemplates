@@ -17,7 +17,7 @@
     h1 {
       padding-top: 1.5rem;
       margin-top: 1.5rem;
-      border-top: thin solid $color-rh-slate;
+//      border-top: thin solid $color-rh-slate;
     }
 
     h2 {
@@ -83,16 +83,14 @@
   }
 
   .agenda-session-inner {
-    background-color: lighten($color-rh-slate, 55%);
+      color: #969696;
+    background-color: #fff;
     padding: 0.25rem 0.5em;
     position: relative;
     min-height: 1.5em;
 
     &.break {
-      background-image: linear-gradient(-45deg, #fafafa 25%, transparent 25%, transparent 50%, #fafafa 50%, #fafafa 75%, transparent 75%, transparent);
-      background-size: 20px 20px;
-      background-position: 0 0;
-      color: lighten($color-rh-slate, 15%);
+opacity: 0.6;
     }
   }
 
