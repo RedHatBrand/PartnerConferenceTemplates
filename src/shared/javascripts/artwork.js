@@ -98,8 +98,7 @@
     canvas.classList.add('artwork-inner');
     canvasWrapper.appendChild(canvas);
     
-    var complexity = global.redhatArtComplexity || 5;
-    var offsetInitial = 20;
+    var numberOfTriangles = 5;
     var flipped = false;
     
     function isPortrait (element) {
@@ -120,70 +119,84 @@
     });
     
     var alignment = {
-        "top": function(triangle, i, offset, flipped) {
+        "top": function(triangle, i, size, offset, flipped) {
+            
+            var transformation = flipped ? "skewX(-45deg)" : "skewX(45deg)";
+            
             triangle.style.top = "0%";
-            triangle.style.right = flipped ? (i*-15) + offset - 100 + "vw" : (i*15) + offset + "vw";
-            triangle.style.transform = "rotateX(180deg) skewX(-45deg)";
-            triangle.style.webkitTransform = "rotateX(180deg) skewX(-45deg)";
-            triangle.style.MozTransform = "rotateX(180deg) skewX(-45deg)";
-            triangle.style.msTransform = "rotateX(180deg) skewX(-45deg)";
-            triangle.style.OTransform = "rotateX(180deg) skewX(-45deg)";
+            triangle.style.right = flipped ? -(i*(size*10)) + "vw": (i*(size*10)) + offset + "vw";
+            triangle.style.transformOrigin = flipped ? "0% 0%" : "100% 100%";
+            triangle.style.transform = transformation;
+            triangle.style.webkitTransform = transformation;
+            triangle.style.MozTransform = transformation;
+            triangle.style.msTransform = transformation;
+            triangle.style.OTransform = transformation;
             triangle.style.width = (100-offset) + "vw";
-            triangle.style.height = (100-offset)*2 + "vw";
+            triangle.style.height = (100-offset) + "vw";
         },
-        "left": function(triangle, i, offset, flipped) {
+        "left": function(triangle, i, size, offset, flipped) {
+            
+            var transformation = flipped ? "skewX(-45deg)" : "skewX(45deg)";
+            
             triangle.style.left = "0%";
-            triangle.style.top = flipped ? (i*-15) + offset - 100 + "vh" : (i*15) + offset + "vh";
-            triangle.style.transform = "rotateY(0deg) skewX(-45deg)";
-            triangle.style.webkitTransform = "rotateY(0deg) skewX(-45deg)";
-            triangle.style.MozTransform = "rotateY(0deg) skewX(-45deg)";
-            triangle.style.msTransform = "rotateY(0deg) skewX(-45deg)";
-            triangle.style.OTransform = "rotateY(0deg) skewX(-45deg)";
+            triangle.style.top = flipped ? -(i*(size*10)) + "vh" : (i*(size*10)) + offset + "vh";
+            triangle.style.transformOrigin = flipped ? "0% 0%" : "100% 100%";
+            triangle.style.transform = transformation;
+            triangle.style.webkitTransform = transformation;
+            triangle.style.MozTransform = transformation;
+            triangle.style.msTransform = transformation;
+            triangle.style.OTransform = transformation;
             triangle.style.width = (100-offset) + "vh";
-            triangle.style.height = (100-offset)*2 + "vh";
+            triangle.style.height = (100-offset) + "vh";
         },
-        "bottom": function(triangle, i, offset, flipped) {
+        "bottom": function(triangle, i, size, offset, flipped) {
+            
+            var transformation = flipped ? "skewX(45deg)" : "skewX(-45deg)";
+            
             triangle.style.bottom = "0%";
-            triangle.style.right = flipped ? (i*-15) + offset - 100 + "vw" : (i*15) + offset + "vw";
-            triangle.style.transform = "rotateX(0deg) skewX(-45deg)";
-            triangle.style.webkitTransform = "rotateX(0deg) skewX(-45deg)";
-            triangle.style.MozTransform = "rotateX(0deg) skewX(-45deg)";
-            triangle.style.msTransform = "rotateX(0deg) skewX(-45deg)";
-            triangle.style.OTransform = "rotateX(0deg) skewX(-45deg)";
+            triangle.style.right = flipped ? -(i*(size*10)) + "vw" : (i*(size*10)) + offset + "vw";
+            triangle.style.transformOrigin = flipped ? "0% 0%" : "100% 100%";
+            triangle.style.transform = transformation;
+            triangle.style.webkitTransform = transformation;
+            triangle.style.MozTransform = transformation;
+            triangle.style.msTransform = transformation;
+            triangle.style.OTransform = transformation;
             triangle.style.width = (100-offset) + "vw";
-            triangle.style.height = (100-offset)*2 + "vw";
+            triangle.style.height = (100-offset) + "vw";
         },
-        "right": function(triangle, i, offset, flipped) {
+        "right": function(triangle, i, size, offset, flipped) {
+            
+            var transformation = flipped ? "skewX(45deg)" : "skewX(-45deg)";
+            
             triangle.style.right = "0%";
-            triangle.style.top = flipped ? (i*-15) + offset - 100 + "vh" : (i*15) + offset + "vh";
-            triangle.style.transform = "rotateY(180deg) skewX(-45deg)";
-            triangle.style.webkitTransform = "rotateY(180deg) skewX(-45deg)";
-            triangle.style.MozTransform = "rotateY(180deg) skewX(-45deg)";
-            triangle.style.msTransform = "rotateY(180deg) skewX(-45deg)";
-            triangle.style.OTransform = "rotateY(180deg) skewX(-45deg)";
+            triangle.style.top = flipped ? -(i*(size*10)) + "vh" : (i*(size*10)) + offset + "vh";
+            triangle.style.transformOrigin = flipped ? "0% 0%" : "100% 100%";
+            triangle.style.transform = transformation;
+            triangle.style.webkitTransform = transformation;
+            triangle.style.MozTransform = transformation;
+            triangle.style.msTransform = transformation;
+            triangle.style.OTransform = transformation;
             triangle.style.width = (100-offset) + "vh";
-            triangle.style.height = (100-offset)*2 + "vh";
+            triangle.style.height = (100-offset) + "vh";
         }
     }
     
-    function setTriangleAlignment (_alignment, triangle, i, _offset, _flipped) {
+    function setTriangleAlignment (_alignment, triangle, i, _size, _offset, _flipped) {
         if (alignment[_alignment])
-            return alignment[_alignment](triangle, i, _offset, _flipped);
+            return alignment[_alignment](triangle, i, _size, _offset, _flipped);
         else
-            return alignment.left(triangle, i, _offset, _flipped);
+            return alignment.left(triangle, i, _size, _offset, _flipped);
     }
     
-    function addTriangleWithOptions (i, _alignment, _offset, _flipped) {
+    function addTriangleWithOptions (i, _size, _alignment, _offset, _flipped) {
         var div = document.createElement('div');
         div.classList.add('artwork-triangle');
         
-//        div.style.backgroundImage = "url(\"data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 200'><polygon fill-opacity='0.2' fill='rgb(0,185,228)' points='0,0 100,100 0,200' /></svg>\")";
         div.style.backgroundColor = "rgba(0,185,228,0.2)";
-        
-        setTriangleAlignment (_alignment, div, i, _offset, _flipped);
         div.style.position = "absolute";
-        div.style.backgroundSize = "100%";
-        div.style.overflow = "hidden";
+        
+        setTriangleAlignment (_alignment, div, i, _size, _offset, _flipped);
+        
         canvas.appendChild(div);
     }
     
@@ -192,12 +205,12 @@
     }
     
     function drawBackground () {
-        for (var i = 0; i < 5; i++) {
-            addTriangleWithOptions (i,"left",-100,true);
+        for (var i = 0; i < numberOfTriangles; i++) {
+            addTriangleWithOptions (i,1,"left",-100,false);
         }
         
-        for (var i = 0; i < 5; i++) {
-            addTriangleWithOptions (i,"right",15,true);
+        for (var i = 0; i < numberOfTriangles; i++) {
+            addTriangleWithOptions (i,1,"right",20,false);
         }
     }
     
