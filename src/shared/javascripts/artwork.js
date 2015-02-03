@@ -210,11 +210,11 @@
   // Media Queries
   
   if (matchMedia) {
-	var mq = window.matchMedia("(min-width: 500px)");
-	mq.addListener(WidthChange);
+	var mq = window.matchMedia("(max-aspect-ratio: 1/2)");
+	mq.addListener(AspectRatioChanged);
 	WidthChange(mq);
     
-  function WidthChange(mq) {
+  function AspectRatioChanged(mq) {
     if (mq.matches) {
 		  // window width is at least 500px
     } else {
