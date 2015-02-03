@@ -28,7 +28,7 @@ height: 603mm;
       {{/ background-image }}
     </style>
   </head>
-  <body
+  <body id="welcomeSignage"
     style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}"
     class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
 
@@ -48,13 +48,9 @@ height: 603mm;
       </div>
 
       {{^ background-image }}
-      <div class="corner-shapes-bottom-right redhat">
-        <div class="corner-shape-solid-triangle"></div>
-        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-        <div class="corner-shape-bottom-right-logo rh-logo">
-          <% include ../../shared/images/rh-logo-include.svg %>
-        </div>
-      </div>
+          <div class="bottomRight">
+              <% include ../../shared/images/rh-logo.svg %>
+                  </div>
       {{/ background-image }}
     </main>
 

@@ -94,11 +94,11 @@ svg {
 
 
 .leftAligned {
-    width: 85%;
-    padding: 0%;
+    width: 40%;
+    padding: 10%;
     position: absolute;
     left: 5%;
-    top: 40%;
+    top: 10%;
 
 }
 .bottomRight {
@@ -108,6 +108,35 @@ svg {
     right: 0;
     bottom: 0;
 
+
+}
+
+.emailLogo {
+    position: absolute;
+    top: 28%;
+    width: 30%;
+    left: 40%;
+}
+
+.emailContainer {
+//    line-height: 1em !important;
+    position: absolute;
+    top: 20%;
+    width: 55%;
+    left: 5.5%;
+}
+
+#emailHeader{
+    .headline {
+//        line-height: 0.5em;
+    }
+}
+
+    
+#welcomeSignage {
+    .bottomRight {
+        padding: 8%;
+    }
 }
 
 .bottomLeft {
@@ -283,6 +312,9 @@ svg {
 
         padding: 15%;
         width: 30%;}
+    
+
+          
     
     .bottomLeft{
 
