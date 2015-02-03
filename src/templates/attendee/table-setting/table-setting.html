@@ -32,30 +32,22 @@ height: 105mm;
     style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}"
     class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
 
-    {{^ background-image }}
-    <div id="artwork"></div>
-    {{/ background-image }}
-
     <main>
       <div id="content">
         <div class="brand sko">
           <% include ../../../shared/images/event-logo-lockup.svg %>
         </div>
-        <article>
-          <h1>{{{ name }}}</h1>
+        <article class="cardInfo">
+            <h1 class="name">{{{ first-name }}} <br><span class="lastName"> {{{ last-name }}}</span></h1>
           <h2>{{{ position }}}</h2>
           <h3>{{{ company }}}</h3>
         </article>
       </div>
 
       {{^ background-image }}
-      <div class="corner-shapes-bottom-right">
-        <div class="corner-shape-solid-triangle"></div>
-        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-        <div class="corner-shape-bottom-right-logo rh-logo">
-          <% include ../../../shared/images/rh-logo-include.svg %>
-        </div>
-      </div>
+          <div class="bottomRight">
+              <% include ../../../shared/images/rh-logo.svg %>
+                  </div>
       {{/ background-image }}
     </main>
 
