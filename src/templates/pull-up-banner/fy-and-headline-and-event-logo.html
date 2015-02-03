@@ -41,7 +41,6 @@ height: 2000mm
     <main>
       <div id="content" class="container_fy16-and-headline-and-event-logo">
         <div class="headline-container">
-          <h2 class="fy16 js-fy16">FY16</h2>
           <h1 class="headline js-headline">{{{ headline }}}</h1>
         </div>
         <div class="event-logo-container">
@@ -50,13 +49,9 @@ height: 2000mm
       </div>
 
       {{^ background-image }}
-      <div class="corner-shapes-bottom-right redhat">
-        <div class="corner-shape-solid-triangle"></div>
-        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-        <div class="corner-shape-bottom-right-logo rh-logo">
-          <% include ../../shared/images/rh-logo-include.svg %>
-        </div>
-      </div>
+          <div class="bottomRight">
+              <% include ../../shared/images/rh-logo.svg %>
+                  </div>
       {{/ background-image }}
     </main>
 
