@@ -5,12 +5,33 @@
 #content {
   left: 2em;
   right: 2em;
-  top: 2.5em;
+  top: 4.5em;
   transform: none;
+  width: initial;
+}
+
+.brand.sko {
+  width: 85%;
+    padding: 0.5em;
+}
+
+.cardInfo {
+    padding-top: 1.5em; 
+}
+    span {
+        font-weight: 300 !important;
+    }
+.name {
+    padding-bottom: 0.5em;
+}
+
+.lastName {
+    line-height: 1em;
+    font-weight: 300 !important;
 }
 
 .corner-shapes-bottom-right {
-  width: 100%; 
+  width: 100%;
 }
 
 .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
@@ -22,3 +43,12 @@
   stroke-width: 0.2pt;
 }
 
+.background-image #content {
+  .brand {
+    text-align: right;
+
+    svg {
+      display: inline-block;
+    }
+  }
+}

@@ -1,10 +1,11 @@
 {
   "data": {
     "year": "FY14",
-    "width": "140",
+    "width": "148",
     "height": "105",
     "unit": "mm",
-    "name": "Brad Parker",
+    "first-name": "Brad",
+    "last-name": "Parker",
     "company": "NetEngine",
     "position": "Designer / Front-end Developer",
     "_background-image": "//d3s84xo5cmutkt.cloudfront.net/assets/attachments/000/003/179/original/gray_clouds.jpg",
