@@ -220,6 +220,24 @@
   if (matchMedia) {
     
     var queries = {
+      "(max-aspect-ratio: 4/1)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
+            offset[0] = -110;
+            offset[1] = 15;
+            drawArtwork();
+          }
+        }
+      },
+      "(max-aspect-ratio: 3/1)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
+            offset[0] = -200;
+            offset[1] = 15;
+            drawArtwork();
+          }
+        }
+      },
       "(max-aspect-ratio: 2/1)": function (mq) {
         if (mq.matches) {
           if (artStyle == "5:1") {
@@ -278,8 +296,18 @@
         if (mq.matches) {
           if (artStyle == "5:1") {
             artSize = 1.5;
+            offset[0] = -20;
+            offset[1] = -15;
+            drawArtwork();
+          }
+        }
+      },
+      "(max-aspect-ratio: 1/2)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
+            artSize = 1.5;
             offset[0] = -10;
-            offset[1] = -12;
+            offset[1] = -15;
             drawArtwork();
           }
         }
