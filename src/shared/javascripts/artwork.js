@@ -108,6 +108,10 @@
     else
       return style.vertical();
   }
+  
+  var offset = [0,0];
+  offset[0] = getOffset(0,artStyle);
+  offset[1] = getOffset(1,artStyle);
 
   var alignment = {
     "top": function(triangle, i, size, offset, flipped) {
@@ -196,12 +200,16 @@
   }
 
   function drawArtwork () {
+    while ( canvas.hasChildNodes() ){
+      canvas.removeChild(canvas.lastChild);
+    }
+    
     for (var i = 0; i < 5; i++) {
-      addTriangleWithOptions (i,artSize,getAlignment(0,artOrientation),getOffset(0,artStyle),artFlipped);
+      addTriangleWithOptions (i,artSize,getAlignment(0,artOrientation),offset[0],artFlipped);
     }
 
     for (var i = 0; i < 5; i++) {
-      addTriangleWithOptions (i,artSize,getAlignment(1,artOrientation),getOffset(1,artStyle),artFlipped);
+      addTriangleWithOptions (i,artSize,getAlignment(1,artOrientation),offset[1],artFlipped);
     }
   }
 
@@ -210,17 +218,80 @@
   // Media Queries
   
   if (matchMedia) {
-	var mq = window.matchMedia("(max-aspect-ratio: 1/2)");
-	mq.addListener(AspectRatioChanged);
-	WidthChange(mq);
     
-  function AspectRatioChanged(mq) {
-    if (mq.matches) {
-		  // window width is at least 500px
-    } else {
-		  // window width is less than 500px
+    var queries = {
+      "(max-aspect-ratio: 2/1)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
+            offset[0] = -110;
+            offset[1] = 15;
+            drawArtwork();
+          }
+        }
+      },
+      "(max-aspect-ratio: 5/3)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
+            offset[0] = -97;
+            offset[1] = 15;
+            drawArtwork();
+          }
+        }
+      },
+      "(max-aspect-ratio: 3/2)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
+            offset[0] = -84;
+            offset[1] = 15;
+            drawArtwork();
+          }
+        }
+      },
+      "(max-aspect-ratio: 7/5)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
+            offset[0] = -69;
+            offset[1] = 15;
+            drawArtwork();
+          }
+        }
+      },
+      "(max-aspect-ratio: 1/1)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
+            offset[0] = -54;
+            offset[1] = 15;
+            drawArtwork();
+          }
+        }
+      },
+      "(max-aspect-ratio: 8/9)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
+            offset[0] = -39;
+            offset[1] = 15;
+            drawArtwork();
+          }
+        }
+      },
+      "(max-aspect-ratio: 210/297)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
+            artSize = 1.5;
+            offset[0] = -10;
+            offset[1] = -12;
+            drawArtwork();
+          }
+        }
+      }
     }
+    
+    for (var query in queries) {
+      var mq = window.matchMedia(query);
+      mq.addListener(queries[query]);
+      queries[query](mq);
+    }
+    
   }
-}
   
 })(window);
