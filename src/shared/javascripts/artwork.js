@@ -82,12 +82,6 @@
       else
         return -100;
     },
-    "1:5": function(n) {
-      if (n > 0)
-        return -100;
-      else
-        return 20;
-    },
     "1:1": function(n) {
       if (n > 0)
         return -80;
@@ -308,9 +302,27 @@
   if (matchMedia) {
     
     var queries = {
+      "(min-aspect-ratio: 5/1) and (max-aspect-ratio: 10/1)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "1:1") {
+            offset[0] = -400;
+            offset[1] = -400;
+            drawArtwork();
+          }
+        }
+      },
+      "(min-aspect-ratio: 3/1) and (max-aspect-ratio: 5/1)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "1:1") {
+            offset[0] = -200;
+            offset[1] = -200;
+            drawArtwork();
+          }
+        }
+      },
       "(min-aspect-ratio: 3/1) and (max-aspect-ratio: 10/1)": function (mq) {
-        if (artStyle == "5:1") {
-          if (mq.matches) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
             offset[0] = -185;
             offset[1] = 100;
             drawArtwork();
@@ -318,44 +330,65 @@
         }
       },
       "(min-aspect-ratio: 5/2) and (max-aspect-ratio: 3/1)": function (mq) {
-        if (artStyle == "5:1") {
-          if (mq.matches) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
             offset[0] = -180;
             offset[1] = 30;
+            drawArtwork();
+          } else if (artStyle == "1:1") {
+            offset[0] = -150;
+            offset[1] = -150;
             drawArtwork();
           }
         }
       },
       "(min-aspect-ratio: 2/1) and (max-aspect-ratio: 5/2)": function (mq) {
-        if (artStyle == "5:1") {
-          if (mq.matches) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
             offset[0] = -130;
             offset[1] = 30;
+            drawArtwork();
+          } else if (artStyle == "1:1") {
+            offset[0] = -125;
+            offset[1] = -125;
             drawArtwork();
           }
         }
       },
       "(min-aspect-ratio: 5/3) and (max-aspect-ratio: 2/1)": function (mq) {
-        if (artStyle == "5:1") {
-          if (mq.matches) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
             offset[0] = -115;
             offset[1] = 30;
+            drawArtwork();
+          } else if (artStyle == "1:1") {
+            offset[0] = -100;
+            offset[1] = -100;
             drawArtwork();
           }
         }
       },
       "(min-aspect-ratio: 5/4) and (max-aspect-ratio: 5/3)": function (mq) {
-        if (artStyle == "5:1") {
-          if (mq.matches) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
             offset[0] = -90;
             offset[1] = 25;
             drawArtwork();
           }
         }
       },
+      "(min-aspect-ratio: 1/3) and (max-aspect-ratio: 5/3)": function (mq) {
+        if (mq.matches) {
+          if (artStyle == "1:1") {
+            offset[0] = -60;
+            offset[1] = -60;
+            drawArtwork();
+          }
+        }
+      },
       "(min-aspect-ratio: 1/1) and (max-aspect-ratio: 5/4)": function (mq) {
-        if (artStyle == "5:1") {
-          if (mq.matches) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
             offset[0] = -65;
             offset[1] = 25;
             drawArtwork();
@@ -363,8 +396,8 @@
         }
       },
       "(min-aspect-ratio: 210/297) and (max-aspect-ratio: 1/1)": function (mq) {
-        if (artStyle == "5:1") {
-          if (mq.matches) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
             offset[0] = -40;
             offset[1] = 20;
             drawArtwork();
@@ -372,17 +405,17 @@
         }
       },
       "(min-aspect-ratio: 1/2) and (max-aspect-ratio: 210/297)": function (mq) {
-        if (artStyle == "5:1") {
-          if (mq.matches) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
             offset[0] = -20;
-            offset[1] = -20;
+            offset[1] = -10;
             drawArtwork();
           }
         }
       },
       "(min-aspect-ratio: 1/3) and (max-aspect-ratio: 1/2)": function (mq) {
-        if (artStyle == "5:1") {
-          if (mq.matches) {
+        if (mq.matches) {
+          if (artStyle == "5:1") {
             offset[0] = -10;
             offset[1] = -40;
             drawArtwork();
