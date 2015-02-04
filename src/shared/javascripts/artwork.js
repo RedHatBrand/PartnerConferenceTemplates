@@ -10,7 +10,7 @@
   var artSize             = global.artworkSize;
   var artOrientation      = global.artworkOrientation;
   var artFlipped          = global.artworkFlipped;
-
+  
   function isPortrait (element) {
     return element.offsetWidth < element.offsetHeight;
   }
@@ -217,108 +217,196 @@
   
   // Media Queries
   
+//  if (matchMedia) {
+//    
+//    var queries = {
+//      "(min-aspect-ratio: 3/1)": function (mq) {
+//        if (mq.matches) {
+//          if (artStyle == "5:1") {
+//            offset[0] = -300;
+//            offset[1] = 100;
+//            drawArtwork();
+//          }
+//        }
+//      },
+//      "(min-aspect-ratio: 2/1)": function (mq) {
+//        if (mq.matches) {
+//          if (artStyle == "5:1") {
+//            offset[0] = -150;
+//            offset[1] = 15;
+//            drawArtwork();
+//          }
+//        }
+//      },
+//      "(min-aspect-ratio: 24/13)": function (mq) {
+//        if (mq.matches) {
+//          if (artStyle == "5:1") {
+//            offset[0] = -137;
+//            offset[1] = 15;
+//            drawArtwork();
+//          }
+//        }
+//      },
+//      "(min-aspect-ratio: 3/2)": function (mq) {
+//        if (mq.matches) {
+//          if (artStyle == "5:1") {
+//            offset[0] = -104;
+//            offset[1] = 15;
+//            drawArtwork();
+//          }
+//        }
+//      },
+//      "(min-aspect-ratio: 1/1)": function (mq) {
+//        if (mq.matches) {
+//          if (artStyle == "5:1") {
+//            offset[0] = -65;
+//            offset[1] = 15;
+//            drawArtwork();
+//          }
+//        }
+//      },
+//      "(max-aspect-ratio: 1/1)": function (mq) {
+//        if (mq.matches) {
+//          if (artStyle == "5:1") {
+//            offset[0] = -54;
+//            offset[1] = 15;
+//            drawArtwork();
+//          }
+//        }
+//      },
+//      "(max-aspect-ratio: 8/9)": function (mq) {
+//        if (mq.matches) {
+//          if (artStyle == "5:1") {
+//            offset[0] = -39;
+//            offset[1] = 15;
+//            drawArtwork();
+//          }
+//        }
+//      },
+//      "(max-aspect-ratio: 210/297)": function (mq) {
+//        if (mq.matches) {
+//          if (artStyle == "5:1") {
+//            artSize = 1.5;
+//            offset[0] = -20;
+//            offset[1] = -15;
+//            drawArtwork();
+//          }
+//        }
+//      },
+//      "(max-aspect-ratio: 1/2)": function (mq) {
+//        if (mq.matches) {
+//          if (artStyle == "5:1") {
+//            artSize = 1.5;
+//            offset[0] = -10;
+//            offset[1] = -15;
+//            drawArtwork();
+//          }
+//        }
+//      }
+//    }
+    
   if (matchMedia) {
     
     var queries = {
-      "(max-aspect-ratio: 4/1)": function (mq) {
-        if (mq.matches) {
-          if (artStyle == "5:1") {
-            offset[0] = -110;
-            offset[1] = 15;
+      "(min-aspect-ratio: 3/1) and (max-aspect-ratio: 10/1)": function (mq) {
+        if (artStyle == "5:1") {
+          if (mq.matches) {
+            offset[0] = -185;
+            offset[1] = 100;
             drawArtwork();
           }
         }
       },
-      "(max-aspect-ratio: 3/1)": function (mq) {
-        if (mq.matches) {
-          if (artStyle == "5:1") {
-            offset[0] = -200;
-            offset[1] = 15;
+      "(min-aspect-ratio: 5/2) and (max-aspect-ratio: 3/1)": function (mq) {
+        if (artStyle == "5:1") {
+          if (mq.matches) {
+            offset[0] = -180;
+            offset[1] = 30;
             drawArtwork();
           }
         }
       },
-      "(max-aspect-ratio: 2/1)": function (mq) {
-        if (mq.matches) {
-          if (artStyle == "5:1") {
-            offset[0] = -110;
-            offset[1] = 15;
+      "(min-aspect-ratio: 2/1) and (max-aspect-ratio: 5/2)": function (mq) {
+        if (artStyle == "5:1") {
+          if (mq.matches) {
+            offset[0] = -130;
+            offset[1] = 30;
             drawArtwork();
           }
         }
       },
-      "(max-aspect-ratio: 5/3)": function (mq) {
-        if (mq.matches) {
-          if (artStyle == "5:1") {
-            offset[0] = -97;
-            offset[1] = 15;
+      "(min-aspect-ratio: 5/3) and (max-aspect-ratio: 2/1)": function (mq) {
+        if (artStyle == "5:1") {
+          if (mq.matches) {
+            offset[0] = -115;
+            offset[1] = 30;
             drawArtwork();
           }
         }
       },
-      "(max-aspect-ratio: 3/2)": function (mq) {
-        if (mq.matches) {
-          if (artStyle == "5:1") {
-            offset[0] = -84;
-            offset[1] = 15;
+      "(min-aspect-ratio: 5/4) and (max-aspect-ratio: 5/3)": function (mq) {
+        if (artStyle == "5:1") {
+          if (mq.matches) {
+            offset[0] = -90;
+            offset[1] = 25;
             drawArtwork();
           }
         }
       },
-      "(max-aspect-ratio: 7/5)": function (mq) {
-        if (mq.matches) {
-          if (artStyle == "5:1") {
-            offset[0] = -69;
-            offset[1] = 15;
+      "(min-aspect-ratio: 1/1) and (max-aspect-ratio: 5/4)": function (mq) {
+        if (artStyle == "5:1") {
+          if (mq.matches) {
+            offset[0] = -65;
+            offset[1] = 25;
             drawArtwork();
           }
         }
       },
-      "(max-aspect-ratio: 1/1)": function (mq) {
-        if (mq.matches) {
-          if (artStyle == "5:1") {
-            offset[0] = -54;
-            offset[1] = 15;
+      "(min-aspect-ratio: 210/297) and (max-aspect-ratio: 1/1)": function (mq) {
+        if (artStyle == "5:1") {
+          if (mq.matches) {
+            offset[0] = -40;
+            offset[1] = 20;
             drawArtwork();
           }
         }
       },
-      "(max-aspect-ratio: 8/9)": function (mq) {
-        if (mq.matches) {
-          if (artStyle == "5:1") {
-            offset[0] = -39;
-            offset[1] = 15;
-            drawArtwork();
-          }
-        }
-      },
-      "(max-aspect-ratio: 210/297)": function (mq) {
-        if (mq.matches) {
-          if (artStyle == "5:1") {
-            artSize = 1.5;
+      "(min-aspect-ratio: 1/2) and (max-aspect-ratio: 210/297)": function (mq) {
+        if (artStyle == "5:1") {
+          if (mq.matches) {
             offset[0] = -20;
-            offset[1] = -15;
+            offset[1] = -20;
             drawArtwork();
           }
         }
       },
-      "(max-aspect-ratio: 1/2)": function (mq) {
-        if (mq.matches) {
-          if (artStyle == "5:1") {
-            artSize = 1.5;
+      "(min-aspect-ratio: 1/3) and (max-aspect-ratio: 1/2)": function (mq) {
+        if (artStyle == "5:1") {
+          if (mq.matches) {
             offset[0] = -10;
-            offset[1] = -15;
+            offset[1] = -40;
             drawArtwork();
           }
         }
       }
     }
+  
+    var style = document.createElement("style");
     
     for (var query in queries) {
       var mq = window.matchMedia(query);
       mq.addListener(queries[query]);
       queries[query](mq);
+      style.appendChild(document.createTextNode("@media " + query + " { .artwork-blank-rule {} }"));
     }
+    
+    function defaultListener() {
+      offset[0] = -100;
+      offset[1] = 20;
+      drawArtwork();
+    }
+    
+    document.head.appendChild(style);
     
   }
   
