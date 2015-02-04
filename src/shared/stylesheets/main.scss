@@ -39,6 +39,22 @@ main {
   z-index: 20;
 }
 
+#genericWeb {
+
+    #content {
+        top: 35%;
+        left: 30%;
+        width: 40%;
+    }
+    
+    h1 {
+        padding-top: 20%;
+        font-size: 3.5em;
+        line-height: 1em;
+    }
+    
+}
+    
 .headline {
   border-top-width: 0;
 //  padding-top: 0.5em;
@@ -368,6 +384,10 @@ svg {
 @media all and (min-aspect-ratio: 2/1) {
     
     
+    #content.container_event-logo {
+        left: 31%;
+    }
+    
   #content, #content[class*=container_] {
     width: 66.667%;
   }
@@ -399,6 +419,8 @@ svg {
   .corner-shapes-bottom-right {
     width: 40%;
   }
+    
+    
 }
 
 @media all and (min-aspect-ratio: 3/1) {
