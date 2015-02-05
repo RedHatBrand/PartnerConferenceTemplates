@@ -288,7 +288,7 @@
       "(min-aspect-ratio: 5/4) and (max-aspect-ratio: 5/3)": function (mq) {
         if (mq.matches) {
           if (artStyle == "corner") {
-            offset[0] = -90;
+            offset[0] = -85;
             offset[1] = 25;
             drawArtwork();
           }
@@ -307,7 +307,7 @@
         if (mq.matches) {
           if (artStyle == "corner") {
             offset[0] = -65;
-            offset[1] = 25;
+            offset[1] = 15;
             drawArtwork();
           }
         }
@@ -316,7 +316,7 @@
         if (mq.matches) {
           if (artStyle == "corner") {
             offset[0] = -40;
-            offset[1] = 20;
+            offset[1] = 15;
             drawArtwork();
           }
         }
