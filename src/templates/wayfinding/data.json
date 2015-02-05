@@ -10,8 +10,8 @@
     "_background-image": "//d3s84xo5cmutkt.cloudfront.net/assets/attachments/000/003/179/original/gray_clouds.jpg",
     "artwork-style": "corner",
     "artwork-size": 2,
-    "artwork-orientation": "vertical",
-    "artwork-flipped": "true",
+    "artwork-orientation": "horizontal",
+    "artwork-flipped": "false",
     "colormode": "blue"
   }
 }

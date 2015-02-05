@@ -216,7 +216,11 @@
     var queries = {
       "(min-aspect-ratio: 5/1) and (max-aspect-ratio: 10/1)": function (mq) {
         if (mq.matches) {
-          if (artStyle == "tiled") {
+          if (artStyle == "corner") {
+            offset[0] = -300;
+            offset[1] = 100;
+            drawArtwork();
+          } else if (artStyle == "tiled") {
             offset[0] = -400;
             offset[1] = -400;
             drawArtwork();
@@ -225,18 +229,13 @@
       },
       "(min-aspect-ratio: 3/1) and (max-aspect-ratio: 5/1)": function (mq) {
         if (mq.matches) {
-          if (artStyle == "tiled") {
+          if (artStyle == "corner") {
+            offset[0] = -180;
+            offset[1] = -180;
+            drawArtwork();
+          } else if (artStyle == "tiled") {
             offset[0] = -200;
             offset[1] = -200;
-            drawArtwork();
-          }
-        }
-      },
-      "(min-aspect-ratio: 3/1) and (max-aspect-ratio: 10/1)": function (mq) {
-        if (mq.matches) {
-          if (artStyle == "corner") {
-            offset[0] = -185;
-            offset[1] = 100;
             drawArtwork();
           }
         }
