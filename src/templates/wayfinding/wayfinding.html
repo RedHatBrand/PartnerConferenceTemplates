@@ -31,7 +31,7 @@ height: 297mm;
   </head>
   <body
     style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}"
-    class="{{#background-image}}background-image{{/background-image}} {{direction}} {{artwork-option}} {{colormode}}">
+    class="wayfinding {{#background-image}}background-image{{/background-image}} {{colormode}} {{#artwork-flipped}}left{{/artwork-flipped}}{{^artwork-flipped}}right{{/artwork-flipped}}">
 
     {{^ background-image }}
     <div id="artwork"></div>
