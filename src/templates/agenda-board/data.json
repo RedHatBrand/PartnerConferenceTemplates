@@ -745,7 +745,7 @@
   ]
     }
     ],
-      "artwork-style": "1:1",
+      "artwork-style": "tiled",
       "artwork-size": 3,
       "artwork-orientation": "vertical",
       "artwork-flipped": "true",
