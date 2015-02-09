@@ -745,10 +745,10 @@
   ]
     }
     ],
-      "artwork-style": "5:1",
-      "artwork-size": 2,
+      "artwork-style": "tiled",
+      "artwork-size": 3,
       "artwork-orientation": "vertical",
-      "artwork-flipped": "true",
+      "artwork-flipped": true,
       "colormode": "blue"
   }
 }

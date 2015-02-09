@@ -4,10 +4,10 @@
       "email-sub": "Subtitle",
     "width": 900,
     "_background-image": "//d3s84xo5cmutkt.cloudfront.net/assets/attachments/000/003/179/original/gray_clouds.jpg",
-    "artwork-style": "5:1",
-    "artwork-size": 2,
+    "artwork-style": "tiled",
+    "artwork-size": 4,
     "artwork-orientation": "vertical",
-    "artwork-flipped": "true",
+    "artwork-flipped": true,
     "colormode": "blue"
   }
 }

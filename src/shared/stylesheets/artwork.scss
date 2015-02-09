@@ -10,7 +10,6 @@
 
   .artwork-inner {
     position: relative;
-
     &:before {
       content: '';
       display: block;
@@ -19,4 +18,11 @@
   }
   
   * { margin: 0; }
+}
+
+.wayfinding {
+  .artwork-inner {
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
