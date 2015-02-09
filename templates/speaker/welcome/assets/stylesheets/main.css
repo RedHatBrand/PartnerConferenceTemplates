@@ -1,0 +1,28 @@
+:root, html {
+  font-size: 12pt; }
+
+.brand.sko {
+  width: 66.667%; }
+
+#content {
+  left: 4.5em;
+  top: 4.5em;
+  right: 25%;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none; }
+
+.corner-shapes-bottom-right {
+  width: 50%; }
+
+.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+  right: 2em;
+  bottom: 2em; }
+
+.welcome {
+  padding-top: 2.5em; }
+  .welcome h2 {
+    font-weight: 300;
+    text-transform: capitalize; }
+  .welcome span {
+    font-weight: 300; }

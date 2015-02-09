@@ -1,0 +1,24 @@
+:root, html {
+  font-size: 10pt; }
+
+.brand.sko {
+  width: 50%; }
+
+#content {
+  left: 3.5em;
+  top: 3.5em;
+  right: 25%;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  width: initial; }
+
+.cardInfo {
+  padding-top: 1.5em; }
+
+span {
+  font-weight: 300 !important; }
+
+.lastName {
+  line-height: 1em;
+  font-weight: 300 !important; }

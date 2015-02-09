@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
+    <link rel="stylesheet" href="//redhatbrand.github.io/PartnerConferenceTemplates/shared/stylesheets/main.css" />
+    <link rel="stylesheet" href="//redhatbrand.github.io/PartnerConferenceTemplates/templates/generic-resizeable-print/assets/stylesheets/main.css" />
+    <style type="text/css">
+      {{# background-image }}
+        .background-image main {
+          background-image:
+            url('//redhatbrand.github.io/PartnerConferenceTemplates/shared/images/grid-06-06.svg'),
+            url('{{{ background-image }}}');
+
+          background-repeat: no-repeat;
+          background-blend-mode: multiply;
+          background-size: 105% auto, cover;
+          background-position: center center, center center;
+
+          color: white;
+        }
+
+        .logotext { fill: white; }
+      {{/ background-image }}
+    </style>
+  </head>
+  <body
+    style="width: {{ width }}%; height: {{ height }}{{unit}}"
+    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
+
+    {{^ background-image }}
+    <div id="artwork"></div>
+    {{/ background-image }}
+
+    
+    <script type="text/javascript">
+      window.artworkColor = "{{colormode}}";
+      window.artworkStyle = "{{artwork-style}}";
+      window.artworkSize = {{artwork-size}};
+      window.artworkOrientation = "{{artwork-orientation}}";
+      window.artworkFlipped = {{artwork-flipped}};
+    </script>
+    
+
+    {{^ background-image }}
+    <script type="text/javascript" src="//redhatbrand.github.io/PartnerConferenceTemplates/shared/javascripts/artwork.js"></script>
+    {{/ background-image }}
+
+    <script type="text/javascript" src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,12 @@
+:root, html {
+  font-size: 2vw; }
+
+.brand {
+  width: 66.667%; }
+
+.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+  right: 2em;
+  bottom: 2em; }
+
+.headline-and-logo {
+  width: 50%; }

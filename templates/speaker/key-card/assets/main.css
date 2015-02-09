@@ -1,0 +1,43 @@
+:root, html {
+  font-size: 6pt; }
+
+#content {
+  left: 2em;
+  right: 2em;
+  top: 2em;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  width: initial; }
+
+.brand.sko {
+  width: 85%;
+  padding: 0em; }
+
+.cardInfo {
+  padding-top: 1.5em; }
+
+span {
+  font-weight: 800 !important; }
+
+.name {
+  padding-bottom: 0.5em; }
+
+.lastName {
+  line-height: 1em;
+  font-weight: 300 !important; }
+
+.corner-shapes-bottom-right {
+  width: 100%; }
+
+.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+  right: 2em;
+  bottom: 2em; }
+
+.corner-shapes-bottom-right .corner-shape-pattern svg {
+  stroke-width: 0.2pt; }
+
+.background-image #content .brand {
+  text-align: right; }
+  .background-image #content .brand svg {
+    display: inline-block; }
