@@ -24,6 +24,7 @@ height: 100vh
 <script src='<%= baseUrl %>/templates/infosite/javascripts/main.js'></script>
 <!--[if lt IE 9]> <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script> <![endif]-->
 
+<!--
 <style type="text/css">
   {{# background-image }}
     .background-image.artwork-container { background-color: white; }
@@ -42,18 +43,17 @@ height: 100vh
     }
   {{/ background-image }}
 </style>
+-->
 </head>
 <body data-spy="scroll" data-target=".nav-menu" data-offset="100">
 <div class='wrapper'>
   <header class='header' role='banner'>
-    <figure class='hero artwork-container {{colormode}} {{artwork-option}} {{#background-image}}background-image{{/background-image}}'>
+    <figure class='hero artwork-container'>
 
-      {{^background-image}}
-      <div id="artwork" class="artwork-animate"></div>
-      {{/background-image}}
+        {{#background-image}}<div id="artwork" ></div> {{/background-image}}
 
       <div class='container layer-three'>
-        <% include ../../shared/images/event-logo-lockup-complex.svg %>
+        <% include ../../shared/images/event-logo-lockup.svg %>
 
 
         <div class='event-details ' style="color:0;;background-color: transparent;">
@@ -66,9 +66,7 @@ height: 100vh
           </div>
           {{/ register-link }}
         </div>
-        <a class='rh-logo' href='//www.redhat.com' target='_blank' title='Go to redhat.com'>
-          <% include ../../shared/images/rh-logo-include.svg %>
-        </a>
+      
       </div>
     </figure>
   </header>
@@ -77,8 +75,11 @@ height: 100vh
   </button>
   <nav class='nav-menu animated fadeInDown fixed-left-nav-only-medium-break layer-four nav-hide'>
     <div class='container'>
+       
       <ul class="nav">
-
+        
+        <div class="navLogo"><a href="http://www.redhat.com"><% include ../../shared/images/rh-logo.svg %></a></div>
+          
         <li><a class='menu-link' href='#agenda'>Agenda</a></li>
 
         {{#section }}
@@ -100,9 +101,11 @@ height: 100vh
           {{{ intro }}}
         </div>
         <div class='one-third last author-signoff'>
+<!--
           <div class='intro-author' style="background-image: url('{{{ author-image }}}')">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt='author' />
           </div>
+-->
           <p>{{ author-signoff }}</p>
           {{#author-signature}}
           <img src='{{ author-signature }}' alt='author signature' class='author-signature' />
@@ -242,7 +245,7 @@ height: 100vh
   </section>
   {{/promotion-title}}
 
-  <footer style="position:relative; background-color:rgba(20,40,55,0.57)" class='footer   artwork-container {{colormode}} {{artwork-option}}  ' >
+  <footer style="position:relative;" class='footer   artwork-container {{colormode}} {{artwork-option}}  ' >
     {{#background-image}}<div id="artwork" ></div> {{/background-image}}
 
     <section class='secondary' style="position:relative;z-index:2; background-color: transparent;">

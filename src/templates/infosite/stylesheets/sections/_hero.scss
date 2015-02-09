@@ -2,13 +2,14 @@
   color: white;
   position: relative;
   overflow: hidden;
-  background-color: lighten($color-rh-slate, 15%);
-  padding-top: 4em;
+//  background-color: lighten($color-rh-slate, 15%);
+  padding-top: 8em;
   padding-bottom: $line-height;
   margin: 0;
+    background-color: #74cbf2;
 
   #artwork {
-    opacity: 0.5;
+//    opacity: 0.5;
   }
 
   .gradient {
@@ -17,7 +18,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background-image: radial-gradient(ellipse at 50% 50%, rgba(white, 0.75) 0%, rgba(white, 0.75) 25%, rgba(white, 0.0001) 100%);
+
   }
 
   @media screen and (max-width: $breakpoint-medium) {
@@ -37,7 +38,7 @@
     margin-top: -0.5em;
 
     &:hover {
-      background-color: rgba(white, 0.4);
+//      background-color: rgba(white, 0.4);
     }
 
     &:before {

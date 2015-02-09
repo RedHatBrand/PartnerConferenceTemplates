@@ -1,6 +1,19 @@
 .nav-toggle { display: none; }
 
+.nav {
+//    width: 100%;
+    text-align: right;
+}
+
+.navLogo {
+    margin-top: 13px;
+    width: 100px;
+    display: inline-block;
+    float: left;
+}
+
 .nav-menu {
+ text-align: right;
   background: white;
   position: fixed;
   z-index: 5;
